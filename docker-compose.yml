@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - '8080:8080'
+      - '35777:35729'
+    container_name: web
+    volumes:
+      - .:/app
+    environment:
+      - API_URL=http://127.0.0.1:9000
+      - NODE_ENV=development
+      - PORT=8080
